@@ -83,12 +83,13 @@ body {
   grid-template-areas:
     "icon name change"
     "icon price change";
-  width: 300px;
+  width: 75vw;
   height: 60px;
   background-color: var(--Very-pale-blue);
   border-radius: 0.5rem;
 }
 .btn {
+  display: block;
   width: 300px;
   height: 40px;
   border: none;
@@ -99,11 +100,30 @@ body {
   cursor: pointer;
   font-size: 14px;
 }
+.btn:hover {
+  background-color: var(--Desaturated-blue);
+}
 .cancel-link {
   color: var(--Desaturated-blue);
   font-size: 14px;
+  cursor: pointer;
+}
+.cancel-link:hover {
+  color: black;
 }
 #hero-img {
   width: 100%;
   border-radius: 1rem 1rem 0 0;
+}
+@media only screen and (max-width: 360px) {
+  body {
+    background: url(./images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+  }
+  .card {
+    width: 300px;
+  }
+  .btn {
+    width: 260px;
+  }
 }
