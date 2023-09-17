@@ -5,14 +5,16 @@
   --Bright-blue: hsl(245, 75%, 52%);
   --Very-pale-blue: hsl(225, 100%, 98%);
   --Desaturated-blue: hsl(224, 23%, 55%);
-  --Dark-blue: hsl(223, 47%, 23%);
+  --Dark-blue: rgb(31, 47, 86);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Red Hat Display", sans-serif;
 }
+
 body {
   background: url(./images/pattern-background-desktop.svg) var(--Pale-blue);
   background-repeat: no-repeat;
@@ -22,13 +24,85 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .card {
   max-width: 360px;
-  background-color: var(--Very-pale-blue);
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 1px 3px 8px;
   border-radius: 1rem;
 }
 
+.card-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.text p {
+  color: var(--Desaturated-blue);
+}
+
+.icon {
+  grid-area: icon;
+  justify-self: center;
+  align-self: center;
+}
+.item-name {
+  grid-area: name;
+  justify-self: center;
+  align-self: self-end;
+}
+.price {
+  grid-area: price;
+  justify-self: center;
+  align-self: self-start;
+}
+.change-link {
+  grid-area: change;
+  justify-self: self-end;
+  align-self: center;
+  margin-right: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--Bright-blue);
+}
+.change-link:hover {
+  text-decoration: none;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+.item-container {
+  display: grid;
+  grid-template-columns: 0.75fr 0.75fr 1.5fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "icon name change"
+    "icon price change";
+  width: 300px;
+  height: 60px;
+  background-color: var(--Very-pale-blue);
+  border-radius: 0.5rem;
+}
+.btn {
+  width: 300px;
+  height: 40px;
+  border: none;
+  background-color: var(--Bright-blue);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: rgba(31, 47, 86, 0.25) 0px 3px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.cancel-link {
+  color: var(--Desaturated-blue);
+  font-size: 14px;
+}
 #hero-img {
   width: 100%;
   border-radius: 1rem 1rem 0 0;
